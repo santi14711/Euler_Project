@@ -240,7 +240,6 @@ namespace EulerProjects
                         Console.WriteLine(numero + " es el " + (contador + 1) + " numero primo");
                     }
                 }
-
             }
 
             Console.ReadLine();
