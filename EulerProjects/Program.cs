@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Specialized;
 using static System.Linq.Enumerable;
 
 namespace EulerProjects
@@ -216,32 +217,32 @@ namespace EulerProjects
             What is the 10 001st prime number?*/
 
 
-            int contador = 3, numero = 4;
+            //int contador = 3, numero = 4;
 
-            for (numero = 4; contador < Math.Sqrt(10001)+1; numero=numero+2)
-            {
-                int a = 0, i;
+            //for (numero = 4; contador < Math.Sqrt(10001) + 1; numero = numero + 2)
+            //{
+            //    int a = 0, i;
 
-                for (i = 1; i < (numero + 1); i++)
-                {
-                    if (numero % i == 0)
-                    {
-                        a++;
-                        Console.WriteLine(numero);
-                    }
-                }
-                if (a == 2)
-                {
-                    contador++;
-                    a = 0;
-                    if (contador == 10001)
-                    {
-                        Console.WriteLine(numero + " es el " + (contador + 1) + " numero primo");
-                    }
-                }
-            }
+            //    for (i = 1; i < (numero + 1); i++)
+            //    {
+            //        if (numero % i == 0)
+            //        {
+            //            a++;
+            //            Console.WriteLine(numero);
+            //        }
+            //    }
+            //    if (a == 2)
+            //    {
+            //        contador++;
+            //        a = 0;
+            //        if (contador == 10001)
+            //        {
+            //            Console.WriteLine(numero + " es el " + (contador + 1) + " numero primo");
+            //        }
+            //    }
+            //}
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
             #endregion
 
@@ -351,33 +352,72 @@ namespace EulerProjects
 
             #endregion
 
-            //int divisor = 2;
-            //int sum = 0;
+            /*The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    for (int ni = 0; ni < 10-ni; ni++)
-            //    {
+            Find the sum of all the primes below two million.*/
 
 
-            //         if (ni % divisor==0)
-            //        {
-            //            sum += ni;
 
-            //        }
-            //        divisor++;
+            int sumPrimes = 2;
+            void crive(int n)
+            {
 
 
-            //    }
+                bool[] prime = new bool[n + 1];
+                Parallel.For(0, n + 1, index => prime[index] = true);
+                for (int p = 0; p * p <= n; p++)
+                {
+                    if (prime[p])
+                    {
+                        for (int i = p * 2; i <= n; i += p)
+                            prime[i] = false;
+                    }
+                }
 
-            //    divisor = 2;
-            //}
+                int sum = 0;
+                for (int p = 2; p <= n; p++)
+                {
+                    if (prime[p])
+                    {
+
+                        sum += p;
+                        Console.WriteLine(sum);
+                    }
+                }
+                
+                Console.ReadLine();
 
 
-            //Console.Write(sum);
-            //Console.ReadLine();
+
+                //int divisor = 2;
+                //int sum = 0;
+
+                //for (int i = 0; i < 10; i++)
+                //{
+                //    for (int ni = 0; ni < 10-ni; ni++)
+                //    {
+
+
+                //         if (ni % divisor==0)
+                //        {
+                //            sum += ni;
+
+                //        }
+                //        divisor++;
+
+
+                //    }
+
+                //    divisor = 2;
+                //}
+
+
+                //Console.Write(sum);
+                //Console.ReadLine();
+
+            }
 
         }
-
-    } }
+    }
+} 
 
