@@ -42,7 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="10th.cs" />
+    <Compile Include="2nd.cs" />
+    <Compile Include="1st.cs" />
+    <Compile Include="3rd.cs" />
+    <Compile Include="4th.cs" />
+    <Compile Include="5th.cs" />
+    <Compile Include="6th.cs" />
+    <Compile Include="7th.cs" />
+    <Compile Include="8th.cs" />
+    <Compile Include="9th.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
